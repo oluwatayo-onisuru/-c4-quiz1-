@@ -72,3 +72,9 @@ print(f'Most common actor in all movies: {most_common_actor}')
 movie_unique_Genre = file["Genre"].str.split(',').explode().str.strip()
 num_unique_genre = movie_unique_Genre.nunique()
 print(f'the number of unique genres is {num_unique_genre}')
+
+#Do a correlation of the numerical features,
+num_col_file = file._get_numeric_data().columns
+correlation_matrix = file[num_col_file].corr()
+
+# what insights can you deduce?
